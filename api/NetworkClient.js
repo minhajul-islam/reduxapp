@@ -2,16 +2,16 @@ import request from './AxiosConfig'
 import qs from 'qs'
 import {IS_LIVE} from "./Constants";
 let baseURL = IS_LIVE ? 'https://' : 'https://';
-
+import reduxStore from '../reduxStore';
 
 const get = async (url, params = {}) => {
-    let token = "token_token_token";
-    if (token) {
+    let {access_token, token_type} = reduxStore.getState().io;
+    if (access_token) {
         let config = {
             url,
             baseURL,
             method: 'get', // default
-            headers: {'x-auth-token': token},
+            headers: {'x-auth-token': access_token},
             params,
             timeout: 30000, // default is `0` (no timeout)
             withCredentials: false, // default
@@ -66,6 +66,7 @@ const put = async (url, body) => {
 
 const patch = async (url, body) => {
     let token = "token_token_token";
+    let {access_token, token_type} = reduxStore.getState().io;
     if (token) {
         let config = {
             url,
