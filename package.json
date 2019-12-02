@@ -9,13 +9,24 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.6.2",
     "axios": "^0.19.0",
+    "form-data": "^2.3.3",
+    "moment": "^2.24.0",
+    "prop-types": "latest",
+    "qs": "latest",
     "react": "16.9.0",
     "react-native": "0.61.2",
+    "react-native-dropdownalert": "^4.2.0",
+    "react-native-gesture-handler": "^1.4.1",
+    "react-native-localization": "latest",
+    "react-native-simple-store": "^2.0.2",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.10.3",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "qs": "latest"
+    "remote-redux-devtools": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",

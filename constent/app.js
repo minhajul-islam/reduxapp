@@ -1,2 +1,0 @@
-export const SAVE_PROFILE = 'SAVE_PROFILE';
-export const SAVE_TRANSACTION = 'SAVE_TRANSACTION';
