@@ -1,7 +1,0 @@
-export const LOADING_START = 'LOADING_START';
-export const LOADING_END = 'LOADING_END';
-export const DATA = 'DATA';
-export const ERROR = 'ERROR';
-export const CREDENTIAL = 'CREDENTIAL';
-export const TRANSACTION_API_CALLED = 'TRANSACTION_API_CALLED';
-export const REDIRECT_TO_MANAGE_PAGE = 'REDIRECT_TO_MANAGE_PAGE';

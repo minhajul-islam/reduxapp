@@ -2,11 +2,9 @@ import React from 'react';
 import {View,Alert} from 'react-native';
 import {connect} from 'react-redux'
 import {Loading} from '../component';
-import {saveProfile, saveTransaction} from "../actions/app";
-import {setShouldRedirectedToManagePage} from "../actions/io";
-import {loadingEnd, loadingStart} from "../actions/io";
-//import URL from "../api/url";
-//import axios_request from "../api/axios_request";
+import {saveProfile} from "../redux/actions/app";
+import {loadingEnd, loadingStart} from "../redux/actions/io";
+
 
 
 class App extends React.PureComponent {
@@ -50,8 +48,6 @@ function stateToProps(state) {
 }
 
 export default connect(stateToProps, {
-    saveTransaction,
-    setShouldRedirectedToManagePage,
     saveProfile,
     loadingStart,
     loadingEnd
