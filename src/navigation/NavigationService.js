@@ -9,12 +9,12 @@ function setTopLevelNavigator(navigatorRef) {
 }
 
 function navigate(routeName, params) {
-    if(routeName===Routes.ERROR_SCREEN){
+    if(routeName===Routes.HomeScreen){
         const resetAction = StackActions.reset({
             index: 1,
             actions: [
-                NavigationActions.navigate({routeName: Routes.ABOUT_ME}),
-                NavigationActions.navigate({routeName: Routes.ERROR_SCREEN}),
+                NavigationActions.navigate({routeName: Routes.HomeScreen}),
+                NavigationActions.navigate({routeName: Routes.HomeScreen}),
 
             ], // back_to="A"
         });

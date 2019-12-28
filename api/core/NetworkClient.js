@@ -1,6 +1,6 @@
 import request from './AxiosConfig';
 import qs from 'qs';
-import {IS_LIVE} from './Constants';
+import {IS_LIVE} from '../Constants';
 
 
 let apiVersion = 'v1';

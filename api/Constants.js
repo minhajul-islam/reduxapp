@@ -31,3 +31,8 @@ export const API_STATUS = {
     UNAUTHORIZED: 'UNAUTHORIZED',
 };
 
+export const STORAGE = {
+    USERS : 'USERS',
+};
+
+

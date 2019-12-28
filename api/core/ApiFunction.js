@@ -3,9 +3,9 @@ import {
     API_STATUS, MCQ_LIST,
     PRIVACY,
     USER,
-} from './Constants';
-import {AlertHelper} from '../component/AlertHelper';
-import String from '../src/assets/strings/String';
+} from '../Constants';
+import {AlertHelper} from '../../component/AlertHelper';
+import String from '../../src/assets/strings/String';
 
 let getUserInfo = (reduxSave, callBack, token) => {
     NetworkClient.get(USER, {}, 'Bearer ' + token).then(response => {

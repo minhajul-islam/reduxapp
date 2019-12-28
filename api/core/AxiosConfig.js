@@ -1,9 +1,9 @@
 import axios from 'axios';
 import asyncStore from 'react-native-simple-store';
-import {REFRESH_TOKEN_KEY} from './Constants';
+import {REFRESH_TOKEN_KEY} from '../Constants';
 import NetworkClient from './NetworkClient';
-import UtilFunction from '../src/utils/UtilFunction';
-import NavigationService from '../src/navigation/NavigationService';
+import UtilFunction from '../../src/utils/UtilFunction';
+import NavigationService from '../../src/navigation/NavigationService';
 
 const request = async (config) => {
     let callBack = axios(config);

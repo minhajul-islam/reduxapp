@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux'
-import io from './io';
-import app from './app';
+import {usersReducer} from "./users_reducer";
+import {authReducer} from "./auth_reducer";
 
 export default combineReducers({
-    io,
-    app
+    authReducer,
+    usersReducer
 })
