@@ -2,7 +2,7 @@ import {Component} from 'react';
 import React from 'react';
 import { TouchableHighlight, View, Image, Platform} from 'react-native';
 import {dimensions} from "../common/style";
-import {getAuthPending, getToken, redirectToHome, redirectToLogin} from "../../redux/reducers/auth_reducer";
+import { redirectToHome} from "../../redux/reducers/auth_reducer";
 import {bindActionCreators} from "redux";
 import fetchLoginAction from "../../api/fetchLogin";
 import {connect} from "react-redux";
@@ -34,9 +34,7 @@ class LoginScreen extends Component {
             <TouchableHighlight
                     underlayColor={'transparent'}
                     onPress={() => {
-                        setTimeout(() => {
-                            this.props.fetchLogin("minhajul@gmail.com", "root12345");
-                        }, 3000);
+                        this.props.fetchLogin("minhajul@gmail.com", "root12345");
                     }}>
                 <View style={{backgroundColor: 'white'}}>
                 <Image

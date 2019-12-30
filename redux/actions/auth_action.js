@@ -1,14 +1,8 @@
 import { TYPE} from '../Constants';
 
-export function fetchLoginRequest() {
-    return {
-        type: TYPE.FETCH_LOGIN_REQUEST
-    }
-}
-
 export function fetchLoginSuccess(payload) {
     return {
-        type: TYPE.FETCH_LOGIN_SUCCESS,
+        type: TYPE.FETCH_AUTH_SUCCESS,
         syncTime: new Date(),
         payload
     }
@@ -16,15 +10,13 @@ export function fetchLoginSuccess(payload) {
 
 export function fetchLogout() {
     return {
-        type: TYPE.FETCH_LOGIN_SUCCESS,
-        syncTime: '',
-        payload:''
+        type: TYPE.FETCH_AUTH_REMOVE,
     }
 }
 
 export function fetchLoginFailure(payload) {
     return {
-        type: TYPE.FETCH_LOGIN_FAILURE,
+        type: TYPE.FETCH_AUTH_FAILURE,
         payload
     }
 }

@@ -7,28 +7,29 @@ const initialState = {
         refresh_token: ""
     },
     syncTime: '',
-    pending: false,
     error: null
 };
 
 export function authReducer(state = initialState, action) {
     switch (action.type) {
-        case TYPE.FETCH_LOGIN_REQUEST:
+        case TYPE.FETCH_AUTH_SUCCESS:
             return {
                 ...state,
-                pending: true
-            };
-        case TYPE.FETCH_LOGIN_SUCCESS:
-            return {
-                ...state,
-                pending: false,
                 syncTime: action.syncTime,
                 auth: action.payload
             };
-        case TYPE.FETCH_LOGIN_FAILURE:
+        case TYPE.FETCH_AUTH_REMOVE:
             return {
                 ...state,
-                pending: false,
+                syncTime: '',
+                auth: {
+                    token: "",
+                    refresh_token: ""
+                },
+            };
+        case TYPE.FETCH_AUTH_FAILURE:
+            return {
+                ...state,
                 error: action.error
             };
         default:
@@ -38,8 +39,4 @@ export function authReducer(state = initialState, action) {
 
 export const getToken = state => state.auth.token;
 export const getRefreshToken = state => state.auth.refresh_token;
-export const getAuthPending = state => state.pending;
 export const redirectToHome = state => !UtilFunction.sycTimeCheck(state.syncTime, SYNC.AUTH);
-export const redirectToLogin = state => state.auth.token==="";
-export const getAuthSyncTime = state => state.syncTime;
-export const getAuthError = state => state.error;

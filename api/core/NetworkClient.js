@@ -3,8 +3,8 @@ import qs from 'qs';
 import {IS_LIVE} from '../Constants';
 
 
-let apiVersion = 'v1';
-let baseApiURL = IS_LIVE ? 'http://api/' + apiVersion : 'http:///api/' + apiVersion;
+let apiVersion = '/demo';
+let baseApiURL = IS_LIVE ? 'https://my-json-server.typicode.com/minhajul-islam' + apiVersion : 'https://my-json-server.typicode.com/minhajul-islam' + apiVersion;
 
 const get = async (url, params = {}, token) => {
     let header1={

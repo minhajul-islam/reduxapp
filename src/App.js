@@ -5,13 +5,13 @@ import {Loading} from '../component';
 
 import {bindActionCreators} from 'redux';
 import fetchLoginAction from '../api/fetchLogin';
-import {getToken, getAuthPending, redirectToHome, redirectToLogin} from '../redux/reducers/auth_reducer';
-import {APP_START_STATUS} from "./utils/Constants";
+import {getToken, redirectToHome} from '../redux/reducers/auth_reducer';
 import {dimensions} from "./common/style";
 import {createAppContainer} from "react-navigation";
 import {createStackNavigator} from "react-navigation-stack";
 import {Routes, RoutesWithLogin} from "./navigation/Routes";
 import NavigationService from "./navigation/NavigationService";
+import {isLoading} from "../redux/reducers/io";
 
 let Navigation = createAppContainer(createStackNavigator(Routes));
 let NavigationLogin = createAppContainer(createStackNavigator(RoutesWithLogin));
@@ -57,7 +57,7 @@ class App extends React.PureComponent {
                     source={require('./assets/image/splash.png')}/>
                 }
 
-                { this.props.pending &&
+                { this.props.loading &&
                     <Loading/>
 
                 }
@@ -69,9 +69,8 @@ class App extends React.PureComponent {
 
 const mapStateToProps = state => ({
     token: getToken(state.authReducer),
-    pending: getAuthPending(state.authReducer),
-    redirectToHome: redirectToHome(state.authReducer),
-    redirectToLogin: redirectToLogin(state.authReducer)
+    loading: isLoading(state.io),
+    redirectToHome: redirectToHome(state.authReducer)
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
