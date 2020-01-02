@@ -1,10 +1,8 @@
-import axios from 'axios';
 import UtilFunction from "../src/utils/UtilFunction";
 import {SYNC} from "../redux/Constants";
 import {fetchLoginFailure,fetchLoginSuccess} from "../redux/actions/auth_action";
 import {loadingEnd, loadingStart} from "../redux/actions/io";
 import NetworkClient from "./core/NetworkClient";
-import { Alert} from "react-native";
 
 function fetchLogin(userName,password) {
     return (dispatch, getState) => {

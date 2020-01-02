@@ -30,7 +30,7 @@ class FlightListScreen extends Component {
             <TouchableHighlight
                     underlayColor={'transparent'}
                     onPress={() => {
-                        this.props.navigation.navigate('FlightInfoScreen');}
+                        this.props.navigation.navigate('PaymentScreen');}
                         }>
                 <View style={{backgroundColor: 'white'}}>
                 <Image

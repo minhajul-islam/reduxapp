@@ -4,7 +4,7 @@ import {StatusBar, TouchableHighlight, View, Image, Platform
     , Alert} from 'react-native';
 import {dimensions} from "../common/style";
 
-class NetBankingScreen extends Component {
+class PaymentScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,16 +15,7 @@ class NetBankingScreen extends Component {
 
     static navigationOptions = ({navigation}) => ({
         header:null,
-        headerStyle: {
-            backgroundColor: 'white',
-        },
-        headerTitleStyle: {
-            flex: 1,
-            textAlign: 'center',
-            marginRight: Platform.OS === 'ios' ? 0 : 56,
-        },
-        headerTintColor: 'red',
-        tabBarVisible: false,
+
     });
 
     render() {
@@ -42,7 +33,7 @@ class NetBankingScreen extends Component {
                         marginTop: 0,
                         width: dimensions.fullWidth,
                     }}
-                    source={require('../assets/image/net_banking.png')}/>
+                    source={require('../assets/image/payment_page.png')}/>
                 </View>
             </TouchableHighlight>
 
@@ -51,5 +42,5 @@ class NetBankingScreen extends Component {
     }
 }
 
-export default NetBankingScreen;
+export default PaymentScreen;
 

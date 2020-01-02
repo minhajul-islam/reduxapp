@@ -1,7 +1,4 @@
 import axios from 'axios';
-import {REFRESH_TOKEN_KEY} from '../Constants';
-import NavigationService from '../../src/navigation/NavigationService';
-
 const request = async (config) => {
     let callBack = axios(config);
     return callBack.then(response => {

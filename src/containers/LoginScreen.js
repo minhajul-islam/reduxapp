@@ -1,8 +1,8 @@
 import {Component} from 'react';
 import React from 'react';
-import { TouchableHighlight, View, Image, Platform} from 'react-native';
+import {TouchableHighlight, Alert, View, Image, Platform} from 'react-native';
 import {dimensions} from "../common/style";
-import { redirectToHome} from "../../redux/reducers/auth_reducer";
+import {redirectToHome} from "../../redux/reducers/auth_reducer";
 import {bindActionCreators} from "redux";
 import fetchLoginAction from "../../api/fetchLogin";
 import {connect} from "react-redux";
@@ -29,21 +29,29 @@ class LoginScreen extends Component {
         tabBarVisible: false,
     });
 
+    componentDidMount() {
+        let inputData = {
+            userName: 'minhajul@gmail.com',
+            password:'root12345'
+        };
+        Alert.alert("Demo Input for login", JSON.stringify(inputData));
+    }
+
     render() {
         return (
             <TouchableHighlight
-                    underlayColor={'transparent'}
-                    onPress={() => {
-                        this.props.fetchLogin("minhajul@gmail.com", "root12345");
-                    }}>
+                underlayColor={'transparent'}
+                onPress={() => {
+                    this.props.fetchLogin("minhajul@gmail.com", "root12345");
+                }}>
                 <View style={{backgroundColor: 'white'}}>
-                <Image
-                    style={{
-                        height: dimensions.fullHeight,
-                        marginTop: 0,
-                        width: dimensions.fullWidth,
-                    }}
-                    source={require('../assets/image/login.png')}/>
+                    <Image
+                        style={{
+                            height: dimensions.fullHeight,
+                            marginTop: 0,
+                            width: dimensions.fullWidth,
+                        }}
+                        source={require('../assets/image/login.png')}/>
                 </View>
             </TouchableHighlight>
 
@@ -51,6 +59,7 @@ class LoginScreen extends Component {
         );
     }
 }
+
 const mapStateToProps = state => ({
     redirectToHome: redirectToHome(state.authReducer),
 });
