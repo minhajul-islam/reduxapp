@@ -4,7 +4,7 @@ import {fetchLoginFailure,fetchLoginSuccess} from "../redux/actions/auth_action"
 import {loadingEnd, loadingStart} from "../redux/actions/io";
 import NetworkClient from "./core/NetworkClient";
 
-function fetchLogin(userName,password) {
+function fetchLogin(navigation,userName,password) {
     return (dispatch, getState) => {
         const syncTime = getState().authReducer.syncTime;
         if (UtilFunction.sycTimeCheck(syncTime, SYNC.AUTH)) {
@@ -12,6 +12,7 @@ function fetchLogin(userName,password) {
             NetworkClient.get('/auth', {}, '')
                 .then(response => {
                     dispatch(fetchLoginSuccess(response.data));
+                    navigation.navigate('DRAWER');
                     dispatch(loadingEnd());
                 })
                 .catch(error => {

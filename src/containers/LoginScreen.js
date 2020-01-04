@@ -32,9 +32,15 @@ class LoginScreen extends Component {
     componentDidMount() {
         let inputData = {
             userName: 'minhajul@gmail.com',
-            password:'root12345'
+            password: 'root12345'
         };
-        Alert.alert("Demo Input for login", JSON.stringify(inputData));
+
+        if (this.props.redirectToHome) {
+            this.props.navigation.navigate('DRAWER');
+        } else{
+            Alert.alert("Demo Input for login", JSON.stringify(inputData));
+        }
+
     }
 
     render() {
@@ -42,7 +48,7 @@ class LoginScreen extends Component {
             <TouchableHighlight
                 underlayColor={'transparent'}
                 onPress={() => {
-                    this.props.fetchLogin("minhajul@gmail.com", "root12345");
+                    this.props.fetchLogin(this.props.navigation, "minhajul@gmail.com", "root12345");
                 }}>
                 <View style={{backgroundColor: 'white'}}>
                     <Image

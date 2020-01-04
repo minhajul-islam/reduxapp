@@ -1,14 +1,12 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import {reduxStore, persistor} from "./redux/reduxStore";
+import {reduxStore, persistor} from "../../redux/reduxStore";
 import { StatusBar, View} from 'react-native';
 import DropdownAlert from 'react-native-dropdownalert';
-import {AlertHelper} from './component/AlertHelper';
+import {AlertHelper} from '../../component/AlertHelper';
 import {PersistGate} from 'redux-persist/integration/react';
-import App from "./src/App";
+import App from "./AppWithDrawer";
 
-
-// Render the app container component with the provider around it
 export default class AppRoot extends React.Component {
 
     constructor(props) {
